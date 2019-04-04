@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2d3032</color>
+    <color name="colorPrimaryDark">#202020</color>
+    <color name="colorAccent">#9873b2</color>
+
+    <color name="view_finder">#66B3AAAA</color>
+    <color name="black_overlay">#77000000</color>
+
+    <color name="radio_checked">#20a959</color>
+    <color name="radio_unchecked">#0b0b0b</color>
+
+    <color name="font_white">#EEEEEE</color>
+    <color name="dot_color">#E6FC0000</color>
+    <color name="dot_default">#FDFFFFFF</color>
+
+    <color name="duskYellow">#FFE100</color>
+    <color name="lightGrey">#FFFFFF</color>
+
+    <color name="radio_checked_bg">#457CEC</color>
+    <color name="transparent">#00FFFFFF</color>
+</resources>

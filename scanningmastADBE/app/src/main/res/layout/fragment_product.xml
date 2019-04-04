@@ -1,0 +1,325 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/black_overlay"
+    android:padding="5dp"
+    tools:context="com.adobe.intelliscan.scan.ProductFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+
+        android:id="@+id/relative_full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_centerHorizontal="true"
+            style="?android:attr/ratingBarStyleSmall"
+            android:theme="@style/AppThemeRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:numStars="5"
+            android:isIndicator="true"
+            android:stepSize=".1"
+            android:visibility="invisible"/>
+
+            <me.crosswall.lib.coverflow.core.PagerContainer
+                android:id="@+id/pager_container"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:layout_below="@+id/rating"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="#00CCCCCC"
+                android:clipChildren="false">
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/prod_image_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:visibility="visible" />
+
+            </me.crosswall.lib.coverflow.core.PagerContainer>
+
+            <RelativeLayout
+                android:id="@+id/rr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="40dp"
+                tools:context="it.moondroid.carousellayoutdemo.CoverFlowActivity"
+                xmlns:coverflow="http://schemas.android.com/apk/res-auto"
+                >
+
+            <!--<it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+                android:id="@+id/coverflow"
+                coverflow:coverHeight="130dp"
+                coverflow:coverWidth="150dp"
+                coverflow:reflectionGap="0px"
+                coverflow:reflectionOpacity="7"
+                coverflow:rotationThreshold="3"
+                coverflow:scalingThreshold="0.1"
+                coverflow:adjustPositionMultiplier="1.7"
+                coverflow:shouldRepeat="false"
+
+                coverflow:spacing="0.6"
+                coverflow:adjustPositionThreshold="2"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:visibility="invisible"
+                />-->
+
+            </RelativeLayout>
+
+
+
+        <android.support.design.widget.TabLayout
+            android:visibility="gone"
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pager_container"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"/>
+
+
+
+
+        <RadioGroup
+            android:id="@+id/prod_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/pager_container"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_selecter_bg_blue"
+            android:weightSum="3"
+            android:visibility="invisible">
+
+            <com.adobe.intelliscan.utils.CustomRadioButton
+                android:id="@+id/prod_color_radio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:padding="3dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="COLORS"
+                android:textColor="@color/radio_checked_bg"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.adobe.intelliscan.utils.CustomRadioButton
+                android:id="@+id/prod_feature_radio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="KEY FEATURES"
+                android:textColor="@color/radio_checked_bg"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.adobe.intelliscan.utils.CustomRadioButton
+                android:id="@+id/prod_spec_radio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="SPECS"
+                android:textColor="@color/radio_checked_bg"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/prod_colors_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prod_radio_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/prod_key_features_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prod_radio_group"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:textColor="@color/font_white"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/prod_key_feature_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prod_radio_group"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:visibility="gone"/>
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/prod_specs_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prod_radio_group"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:scrollbars="none"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/prod_close_ibtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
+
+
+
+        <ImageButton
+            android:id="@+id/prod_similar_radio"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/prod_close_ibtn"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_copy_e"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/add_cart_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/prod_similar_radio"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_cart_svg"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/play_video"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_play_button"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/review"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/play_video"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_revieww"
+            android:visibility="invisible"/>
+
+
+
+    </RelativeLayout>
+
+
+        <ImageButton
+            android:visibility="gone"
+            android:id="@+id/close_video"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
+        <ImageButton
+            android:visibility="gone"
+            android:id="@+id/close_similar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
+        <ImageButton
+            android:visibility="gone"
+            android:id="@+id/close_review"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_close" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:visibility="gone"
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:fastforward_increment="300"
+            app:rewind_increment="300"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/recycleViewReview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
