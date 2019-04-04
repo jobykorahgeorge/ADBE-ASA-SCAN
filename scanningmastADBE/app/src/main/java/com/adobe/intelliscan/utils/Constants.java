@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Constants {
 
-    public static final String URL_DEFAULT = "https://aem029.msavlab.adobe.com";
+    public static final String URL_DEFAULT = "";
 
     public final static String RED = "RED";
     public final static String BLUE = "BLUE";
