@@ -18,7 +18,7 @@ public class RetrofitClientInstance {
 
     private static Retrofit retrofit=null;
     private static Preferences preferences =new Preferences(App.getContext());
-    private static final String BASE_URL = "http://ec2-54-178-172-48.ap-northeast-1.compute.amazonaws.com/rest/";
+    private static final String BASE_URL = "";
 //    private static final String BASE_URL = "http://192.168.1.16:3000";
 
     private static Gson gson = new GsonBuilder()
