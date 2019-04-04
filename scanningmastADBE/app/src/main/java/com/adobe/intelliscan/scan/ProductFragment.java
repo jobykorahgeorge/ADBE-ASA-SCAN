@@ -362,7 +362,7 @@ public class ProductFragment extends Fragment implements VolleyHandler.NetworkLi
                                         yes1.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                Uri uri = Uri.parse("http://ec2-54-178-172-48.ap-northeast-1.compute.amazonaws.com/checkout/cart/");
+                                                Uri uri = Uri.parse("");
                                                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                                 getActivity().startActivity(intent);
                                                 alertDialog3.dismiss();
